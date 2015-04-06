@@ -77,5 +77,48 @@ static private PreparedStatement pst=null;
       
        }
 
+     
+     public static void Adddata(String complaint) throws SQLException
+       {
+            // System.out.println("entered appdat");
+            String Complaint = complaint;
+           
+              try {
+               	Class.forName(MyDriver);
+               	connection = DriverManager.getConnection(MyDbUrl,dbuser,password);
+               	
+                   String sqlstatement;
+                   sqlstatement = "INSERT INTO complaintdata VALUES(?)";
+                   pst= connection.prepareStatement(sqlstatement);
+                   pst.setString(1,Complaint);
+                   
+                   int rows =pst.executeUpdate();
+                   System.out.println("Rows impacted : " + rows );
+                   pst.close();
+                   connection.close();
+                   
+       			
+       			
+       		} catch (ClassNotFoundException | SQLException e) {
+       			// TODO Auto-generated catch block
+       			e.printStackTrace();
+       		}
+               finally{
+                   
+                   try{
+                      if(pst!=null)
+                         pst.close();
+                   }catch(SQLException se2){
+                   }
+                   try{
+                      if(connection!=null)
+                      connection.close();
+                   }catch(SQLException se){
+                      se.printStackTrace();
+                   }
+                
+                } 
+      
+       }
     
 }
