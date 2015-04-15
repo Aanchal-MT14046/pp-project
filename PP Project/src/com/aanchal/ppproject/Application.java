@@ -1,3 +1,4 @@
+package com.aanchal.ppproject;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -112,8 +113,6 @@ public class Application extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        {
-           
             if(e.getSource()==submit){
                if(r1.isSelected()){
                JOptionPane.showMessageDialog(null,"Your request can't be processed now!!!"); 
@@ -148,7 +147,7 @@ public class Application extends JFrame implements ActionListener {
             }
         }
     }
-}
+
 
 
 

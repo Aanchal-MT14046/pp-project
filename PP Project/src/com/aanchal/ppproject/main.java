@@ -1,3 +1,5 @@
+package com.aanchal.ppproject;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,10 +48,10 @@ public class main extends JFrame implements ActionListener {
         add(b3);
         add(b4);
     }
-     public static void main(String[] args) {
+    // public static void main(String[] args) {
         
-        new main();
-    }
+      //  new main();
+   // }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -62,7 +64,8 @@ public class main extends JFrame implements ActionListener {
         else if(e.getSource()==b3){
            // new MessMenu();
         }
-        else if(e.getSource()==b4){   
+        else if(e.getSource()==b4){  
+            new Complaint();
            
         }
     }
